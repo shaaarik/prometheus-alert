@@ -1,0 +1,16 @@
+scrape_configs:
+  - job_name: 'pushgateway'
+    honor_labels: true
+    static_configs:
+      - targets: ['pushgateway1:9091']
+  
+  - job_name: 'users'
+    honor_labels: true
+    static_configs:
+      - targets: ['pushgateway2:9091']
+
+  # # Для кастомного экспортера
+  # - job_name: 'marzban'
+  #   static_configs:
+  #     - targets: ['localhost:8001']
+  #   scrape_interval: 30s

@@ -1,0 +1,13 @@
+
+stages:
+  - deploy 
+
+prometheus:
+  stage: deploy
+  trigger:
+    include:
+      - "/promeheus-alert/.gitlab-ci.yml"
+    strategy: depend
+  variables:
+    PARENT_PIPELINE_ID: $CI_PIPELINE_ID
+  when: always

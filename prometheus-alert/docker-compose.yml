@@ -1,0 +1,42 @@
+version: '3.8'
+
+networks:
+  vpn_network:
+    name: vpn_network
+    driver: bridge
+
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    ports:
+      - "9900:9090"
+    networks:
+      - vpn_network
+    restart: unless-stopped
+
+  pushgateway1:
+    image: prom/pushgateway
+    container_name: pushgateway1
+    networks:
+      - vpn_network
+    ports:
+      - "9902:9091"
+
+  pushgateway2:
+    image: prom/pushgateway
+    container_name: pushgateway2
+    networks:
+      - vpn_network
+    ports:
+      - "9901:9091"
+
+
+volumes:
+  prometheus_data:
