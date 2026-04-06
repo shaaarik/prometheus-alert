@@ -1,0 +1,23 @@
+name: Deploy with Docker Compose
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Stop and remove old containers
+        run: docker-compose down || true
+
+      - name: Build and deploy with Docker Compose
+        run: docker-compose up -d --build
+
+      - name: Prune unused images
+        run: docker image prune -f
