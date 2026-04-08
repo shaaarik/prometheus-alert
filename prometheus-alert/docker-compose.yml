@@ -16,7 +16,7 @@ services:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
     ports:
-      - "9900:9090"
+      - "10.8.0.1:9900:9090"
     networks:
       - vpn_network
     restart: unless-stopped
@@ -27,7 +27,7 @@ services:
     networks:
       - vpn_network
     ports:
-      - "9902:9091"
+      - "10.8.0.1:9902:9091"
 
   pushgateway2:
     image: prom/pushgateway
@@ -35,7 +35,7 @@ services:
     networks:
       - vpn_network
     ports:
-      - "9901:9091"
+      - "10.8.0.1:9901:9091"
 
 
 volumes:
