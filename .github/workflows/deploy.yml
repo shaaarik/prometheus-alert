@@ -31,10 +31,16 @@ jobs:
         run: python3 -m venv venv || source venv/bin/activate || pip install -r requirements
 
       - name: Run deployment script
-        run: python test.py > text.txt || cat text.txt
+        run: python metrics.py > metrics.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MARZBAN_URL: ${{ vars.MARZBAN_URL }}
+          MARZBAN_USERNAME: ${{ secrets.MARZBAN_USERNAME }}
           MARZBAN_PASSWORD: ${{ secrets.MARZBAN_PASSWORD }}
+          PUSHGATEWAY_URL1: ${{ vars.PUSHGATEWAY_URL1 }}
+          PUSHGATEWAY_URL2: ${{ vars.PUSHGATEWAY_URL2 }}
+          CLIENT_CERT_PATH: ${{ vars.CLIENT_CERT_PATH }}
+          CLIENT_KEY_PATH: ${{ vars.CLIENT_KEY_PATH }}
       
 
       # - name: Prune unused images
