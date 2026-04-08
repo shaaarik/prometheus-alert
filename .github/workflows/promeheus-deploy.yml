@@ -28,7 +28,7 @@ jobs:
 
       - name: Build and deploy with Docker Composes
         working-directory: ./prometheus-alert
-        run: docker-compose up -f prometheus-compose.yml -d --build
+        run: docker-compose up -d --build
       
       - name: Create virtual environment
         run: |
