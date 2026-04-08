@@ -60,6 +60,14 @@ jobs:
           CLIENT_CERT_PATH: ${{ vars.CLIENT_CERT_PATH }}
           CLIENT_KEY_PATH: ${{ vars.CLIENT_KEY_PATH }}
       
+      - name: Move metrics.service and metrics.timer
+        run: mv metrics.service /etc/systemd/system/ || mv metrics.timer /etc/systemd/system/
+
+      - name: Reload systemd 
+        run: |
+          sudo systemctl daemon-reload
+          sudo systemctl enable my-python-script.timer
+          sudo systemctl start my-python-script.timer
 
       # - name: Prune unused images
       #   run: docker image prune -f

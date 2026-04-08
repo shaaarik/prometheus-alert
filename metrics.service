@@ -1,0 +1,23 @@
+[Unit]
+Description=Marzban-metrics
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/venv/bin/python /home/john/actions-runner/_work/prometheus-alert/prometheus-alert/metrics.py
+WorkingDirectory=/home/john/actions-runner/_work/prometheus-alert/prometheus-alert
+User=john
+Group=john
+
+# Окружение
+EnvironmentFile=/home/john/actions-runner/_work/prometheus-alert/prometheus-alert/.env
+
+# Стандартные потоки в syslog/journal
+StandardOutput=journal
+StandardError=journal
+
+# Таймаут выполнения (если скрипт выполняется дольше 1.5 минут - убить)
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target
