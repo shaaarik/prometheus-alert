@@ -24,7 +24,9 @@ jobs:
 
       - name: Stop and remove old containers
         working-directory: ./prometheus
-        run: docker-compose down || true
+        run: 
+          docker stop pushgateway1 pushgateway2 prometheus || true
+          docker-compose down || true
 
       - name: Build and deploy with Docker Composes
         working-directory: ./prometheus

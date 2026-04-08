@@ -30,9 +30,7 @@ jobs:
 
       - name: Make .env file
         working-directory: ./alertmanager
-        run: |
-          cd /opt/alertmanager
-          
+        run: |          
           echo "TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}" > .env
           echo "TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}" >> .env
           
