@@ -3,7 +3,7 @@ groups:
   rules:
   - alert: MarzbanUserKitHighValue
     expr: |
-      {__name__=~"marzban_user_.*", job!="pushgateway"} > 1073741824
+      increase({__name__=~"marzban_user_.*", job="users"}[1h]) > 52428800
     for: 1m
     labels:
       severity: warning
@@ -12,5 +12,5 @@ groups:
       description: |
         Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
         Текущее значение: {{ $value | humanize }}
-        Порог: 1 GB
+        Порог: 50 MB за 1 час
         Источник: {{ $labels.instance }}
