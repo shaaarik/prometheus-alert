@@ -13,6 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.3'
+
       - name: Stop and remove old containers
         working-directory: ./prometheus-alert
         run: docker-compose down || true
@@ -24,6 +29,11 @@ jobs:
       - name: Install requirements
         run: python3 -m venv venv || source venv/bin/activate || pip install -r requirements
 
-       
+      - name: Run deployment script
+        run: python test.py
+        env:
+          CLIENT_CERT_PATH: ${{ vars.CLIENT_CERT_PATH }}
+      
+
       # - name: Prune unused images
       #   run: docker image prune -f
