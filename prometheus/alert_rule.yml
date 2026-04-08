@@ -8,6 +8,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -23,6 +24,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -38,6 +40,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -53,6 +56,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -68,6 +72,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -83,6 +88,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -98,6 +104,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -113,6 +120,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -128,6 +136,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -143,6 +152,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -158,6 +168,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -173,6 +184,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -187,6 +199,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -202,6 +215,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -217,6 +231,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -232,6 +247,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -246,6 +262,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -261,6 +278,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -276,6 +294,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -291,6 +310,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -306,6 +326,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -321,6 +342,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -336,6 +358,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -351,6 +374,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -366,6 +390,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -381,6 +406,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -396,6 +422,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -411,6 +438,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -426,6 +454,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -441,6 +470,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -456,6 +486,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -471,6 +502,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -486,6 +518,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -501,6 +534,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -516,6 +550,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -531,6 +566,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -546,6 +582,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -561,6 +598,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -576,6 +614,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -591,6 +630,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -606,6 +646,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -621,6 +662,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -636,6 +678,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -651,6 +694,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -666,6 +710,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -681,6 +726,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -696,6 +742,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -711,6 +758,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -726,6 +774,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -741,6 +790,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -756,6 +806,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -771,6 +822,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -786,6 +838,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -801,6 +854,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -816,6 +870,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -831,6 +886,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -846,6 +902,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -861,6 +918,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -876,6 +934,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
@@ -891,6 +950,7 @@ groups:
     for: 1m
     labels:
       severity: info
+      username: '{{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}'
     annotations:
       summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
       description: |
