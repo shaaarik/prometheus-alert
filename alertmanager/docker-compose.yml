@@ -2,8 +2,7 @@ version: '3.8'
 
 networks:
   vpn_network:
-    name: vpn_network
-    driver: bridge
+    external: true
 
 services:
   alertmanager:

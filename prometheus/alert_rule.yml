@@ -1,0 +1,16 @@
+groups:
+- name: marzban_alerts
+  rules:
+  - alert: MarzbanUserKitHighValue
+    expr: |
+      {__name__=~"marzban_user_.*", job!="pushgateway"} > 1073741824
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Высокое значение для пользователя {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+        Источник: {{ $labels.instance }}
