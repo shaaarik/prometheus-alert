@@ -3,7 +3,7 @@ groups:
   rules:
   - alert: MarzbanUserKitHighValue
     expr: |
-      {__name__=~"marzban_user_.*", job="users"} > 52428800
+      {__name__=~"marzban_user_kit", job="users"} > 52428800
     for: 1m
     labels:
       severity: warning
