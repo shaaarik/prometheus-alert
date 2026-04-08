@@ -1,22 +1,16 @@
 groups:
-  - name: user_traffic_alerts
-    interval: 30s
-    rules:
-      - alert: UserTrafficExceeds1GB
-        expr: |
-          (
-            {__name__=~"marzban_user_.*", job="users"}
-            > 1073741824
-          )
-          and
-          (
-            changes({__name__=~"marzban_user_.*", job="users"}[24h]) > 0
-            or
-            time() - clamp_max(timestamp({__name__=~"marzban_user_.*", job="users"}), time()) < 60
-          )
-        for: 0s
-        labels:
-          severity: warning
-        annotations:
-          summary: "Пользователь {{ $labels.__name__ }} превысил 1 GB"
-          description: "Трафик пользователя {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }} составляет {{ $value | humanize }} байт"
+- name: marzban_alerts
+  rules:
+  - alert: MarzbanUserKitHighValue
+    expr: |
+      {__name__=~"marzban_user_.*", job="users"} > 52428800
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Высокое значение для пользователя {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 50 MB за 1 час
+        Источник: {{ $labels.instance }}
