@@ -32,6 +32,7 @@ jobs:
       - name: Run deployment script
         run: python test.py > text.txt || cat text.txt
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARZBAN_PASSWORD: ${{ secrets.MARZBAN_PASSWORD }}
       
 
