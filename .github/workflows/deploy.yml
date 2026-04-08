@@ -20,6 +20,10 @@ jobs:
       - name: Build and deploy with Docker Compose
         working-directory: ./prometheus-alert
         run: docker-compose up -d --build
+      
+      - name: Install requirements
+        run: python3 -m venv venv || source venv/bin/activate || pip install -r requirements
 
+       
       # - name: Prune unused images
       #   run: docker image prune -f
