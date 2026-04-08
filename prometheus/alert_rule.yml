@@ -1,4 +1,19 @@
 groups:
+- name: marzban_info1
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_.*", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
 - name: marzban_info10
   rules:
   - alert: MarzbanUser10GBValue
