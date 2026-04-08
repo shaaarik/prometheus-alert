@@ -61,7 +61,7 @@ jobs:
           CLIENT_KEY_PATH: ${{ vars.CLIENT_KEY_PATH }}
       
       - name: Move metrics.service and metrics.timer
-        run: mv metrics.service /etc/systemd/system/ || mv metrics.timer /etc/systemd/system/
+        run: sudo mv metrics.service /etc/systemd/system/ || sudo mv metrics.timer /etc/systemd/system/
 
       - name: Reload systemd 
         run: |
