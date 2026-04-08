@@ -24,7 +24,6 @@ receivers:
           *Severity:* {{ .CommonLabels.severity }}
           *Description:* {{ .CommonAnnotations.description }}
           *Instance:* {{ .CommonLabels.instance }}
-          *Time:* {{ .StartsAt }}
 
 inhibit_rules:
   - source_match:
