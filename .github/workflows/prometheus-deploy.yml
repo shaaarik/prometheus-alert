@@ -8,6 +8,7 @@ on:
       - '.github/workflows/prometheus-deploy.yml'
   workflow_dispatch:
 
+
 jobs:
   deploy_prometheus:
     runs-on: self-hosted
