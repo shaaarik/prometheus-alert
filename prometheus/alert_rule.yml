@@ -1,16 +1,87 @@
 groups:
 - name: marzban_alerts
   rules:
-  - alert: MarzbanUserKitHighValue
+  - alert: MarzbanUser10GBValue
     expr: |
-      {__name__=~"marzban_user_kit", job="users"} > 52428800
+      ({__name__=~"marzban_user_.*", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_alerts
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_.*", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_alerts
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_.*", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+
+- name: marzban_alerts
+  rules:
+  - alert: Marzban1TB
+    expr: |
+      sum({__name__=~"marzban_user_.*", job="users"} > 52428800) > 1099511627776
     for: 1m
     labels:
       severity: warning
     annotations:
-      summary: "Высокое значение для пользователя {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      summary: "Превышен  общий траффик 1 TB"
       description: |
-        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
         Текущее значение: {{ $value | humanize }}
-        Порог: 50 MB за 1 час
-        Источник: {{ $labels.instance }}
+        Порог: 1 TB
+
+- name: marzban_alerts
+  rules:
+  - alert: Marzban2TB
+    expr: |
+      sum({__name__=~"marzban_user_.*", job="users"} > 52428800) > 2199023255552
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Превышен  общий траффик 2 TB"
+      description: |
+        Текущее значение: {{ $value | humanize }}
+        Порог: 2 TB
+
+- name: marzban_alerts
+  rules:
+  - alert: Marzban2_5TB
+    expr: |
+      sum({__name__=~"marzban_user_.*", job="users"} > 52428800) > 2748779069440
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Превышен  общий траффик 2,5 TB"
+      description: |
+        Текущее значение: {{ $value | humanize }}
+        Порог: 2,5 TB

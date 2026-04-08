@@ -6,7 +6,7 @@ route:
   group_by: ['alertname', 'severity']
   group_wait: 10s
   group_interval: 10s
-  repeat_interval: 1h
+  repeat_interval: 720h
   receiver: 'telegram'
 
 receivers:
@@ -18,13 +18,15 @@ receivers:
         api_url: 'https://api.telegram.org'
         message: |-
           *AlertManager*
-          
-          *Status:* {{ .Status | toUpper }}
-          *Alert:* {{ .CommonLabels.alertname }}
-          *Severity:* {{ .CommonLabels.severity }}
-          *Description:* {{ .CommonAnnotations.description }}
-          *Instance:* {{ .CommonLabels.instance }}
 
+          *Alert:* {{ .CommonLabels.alertname }}
+          *Severity:* 
+          {{- if eq .CommonLabels.severity "critical" }}🔥 CRITICAL
+          {{- else if eq .CommonLabels.severity "warning" }}❗ WARNING
+          {{- else if eq .CommonLabels.severity "info" }}💡 INFO
+          {{- else }}{{ .CommonLabels.severity | toUpper }}
+          {{- end }}
+          *Description:* {{ .CommonAnnotations.description }}
 inhibit_rules:
   - source_match:
       severity: 'critical'
