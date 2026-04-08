@@ -1,10 +1,10 @@
 [Unit]
-Description=Marzban-metrics
+Description=reset-Marzban-metrics
 After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/home/john/actions-runner/_work/prometheus-alert/prometheus-alert/venv/bin/python /home/john/actions-runner/_work/prometheus-alert/prometheus-alert/metrics.py
+ExecStart=/home/john/actions-runner/_work/prometheus-alert/prometheus-alert/venv/bin/python /home/john/actions-runner/_work/prometheus-alert/prometheus-alert/reset_users.py
 WorkingDirectory=/home/john/actions-runner/_work/prometheus-alert/prometheus-alert
 User=john
 Group=john
