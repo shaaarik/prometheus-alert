@@ -39,15 +39,8 @@ jobs:
           sleep 5
           docker-compose ps
           
-          # curl -f http://10.8.0.1:9093/-/healthy || exit 1
+          curl -f http://10.8.0.1:9093/-/healthy || exit 1
           
-          curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
-            -H "Content-Type: application/json" \
-            -d "{
-              \"chat_id\": \"${{ secrets.TELEGRAM_CHAT_ID }}\",
-              \"text\": \"✅ AlertManager успешно развернут на $(date +'%Y-%m-%d %H:%M:%S')\",
-              \"parse_mode\": \"Markdown\"
-            }" || echo "Telegram notification failed"
       
       - name: Cleanup
         run: |
