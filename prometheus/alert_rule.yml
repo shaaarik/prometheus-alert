@@ -1,9 +1,9 @@
 groups:
-- name: marzban_info1
+- name: marzban_info1kit
   rules:
   - alert: MarzbanUser1GBValue
     expr: |
-      ({__name__=~"marzban_user_.*", job="users"} > 52428800) > 1073741824
+      ({__name__=~"marzban_user_kit", job="users"} > 52428800) > 1073741824
     for: 1m
     labels:
       severity: info
@@ -14,11 +14,11 @@ groups:
         Текущее значение: {{ $value | humanize }}
         Порог: 1 GB
 
-- name: marzban_info10
+- name: marzban_info10kit
   rules:
   - alert: MarzbanUser10GBValue
     expr: |
-      ({__name__=~"marzban_user_.*", job="users"} > 52428800) > 10737418240
+      ({__name__=~"marzban_user_kit", job="users"} > 52428800) > 10737418240
     for: 1m
     labels:
       severity: info
@@ -29,11 +29,11 @@ groups:
         Текущее значение: {{ $value | humanize }}
         Порог: 10 GB
 
-- name: marzban_info20
+- name: marzban_info20kit
   rules:
   - alert: MarzbanUser20GBValue
     expr: |
-      ({__name__=~"marzban_user_.*", job="users"} > 52428800) > 21474836480
+      ({__name__=~"marzban_user_kit", job="users"} > 52428800) > 21474836480
     for: 1m
     labels:
       severity: info
@@ -44,11 +44,908 @@ groups:
         Текущее значение: {{ $value | humanize }}
         Порог: 20 GB
 
-- name: marzban_info30
+- name: marzban_info30kit
   rules:
   - alert: MarzbanUser30GBValue
     expr: |
-      ({__name__=~"marzban_user_.*", job="users"} > 52428800) > 21474836480
+      ({__name__=~"marzban_user_kit", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+- name: marzban_info1Alexei
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_Alexei", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10Alexei
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_Alexei", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20Alexei
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_Alexei", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30Alexei
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_Alexei", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+
+- name: marzban_info1Julia
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_Julia", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10Julia
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_Julia", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20Julia
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_Julia", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30Julia
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_Julia", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+
+- name: marzban_info1Lexa
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_Lexa", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10Lexa
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_Lexa", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20Lexa
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_Lexa", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30Lexa
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_Lexa", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+- name: marzban_info1Lisichka
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_Lisichka", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10Lisichka
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_Lisichka", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20Lisichka
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_Lisichka", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30Lisichka
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_Lisichka", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+- name: marzban_info1Marina
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_Marina", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10Marina
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_Marina", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20Marina
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_Marina", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30Marina
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_Marina", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+
+- name: marzban_info1Natash
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_Natash", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10Natash
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_Natash", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20Natash
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_Natash", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30Natash
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_Natash", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+
+- name: marzban_info1Shmulke
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_Shmulke", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10Shmulke
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_Shmulke", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20Shmulke
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_Shmulke", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30Shmulke
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_Shmulke", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+
+- name: marzban_info1Slava
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_Slava", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10Slava
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_Slava", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20Slava
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_Slava", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30Slava
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_Slava", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+
+- name: marzban_info1kit
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_kit", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10kit
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_kit", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20kit
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_kit", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30kit
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_kit", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+
+- name: marzban_info1BlzrLover
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_BlzrLover", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10BlzrLover
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_BlzrLover", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20BlzrLover
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_BlzrLover", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30BlzrLover
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_BlzrLover", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+
+- name: marzban_info1Elena
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_Elena", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10Elena
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_Elena", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20Elena
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_Elena", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30Elena
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_Elena", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+
+- name: marzban_info1Elena2
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_Elena2", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10Elena2
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_Elena2", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20Elena2
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_Elena2", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30Elena2
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_Elena2", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+
+- name: marzban_info1Shmulke_ipad
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_Shmulke_ipad", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10Shmulke_ipad
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_Shmulke_ipad", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20Shmulke_ipad
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_Shmulke_ipad", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30Shmulke_ipad
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_Shmulke_ipad", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+
+- name: marzban_info1kit_notebook
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_kit_notebook", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10kit_notebook
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_kit_notebook", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20kit_notebook
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_kit_notebook", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30kit_notebook
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_kit_notebook", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 30 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 30 GB
+
+- name: marzban_info1kit_plansh
+  rules:
+  - alert: MarzbanUser1GBValue
+    expr: |
+      ({__name__=~"marzban_user_kit_plansh", job="users"} > 52428800) > 1073741824
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 1 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 1 GB
+
+- name: marzban_info10kit_plansh
+  rules:
+  - alert: MarzbanUser10GBValue
+    expr: |
+      ({__name__=~"marzban_user_kit_plansh", job="users"} > 52428800) > 10737418240
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 10 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 10 GB
+
+- name: marzban_info20kit_plansh
+  rules:
+  - alert: MarzbanUser20GBValue
+    expr: |
+      ({__name__=~"marzban_user_kit_plansh", job="users"} > 52428800) > 21474836480
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: "Превышен траффик 20 GB {{ $labels.__name__ | reReplaceAll \"marzban_user_\" \"\" }}"
+      description: |
+        Пользователь: {{ $labels.__name__ | reReplaceAll "marzban_user_" "" }}
+        Текущее значение: {{ $value | humanize }}
+        Порог: 20 GB
+
+- name: marzban_info30kit_plansh
+  rules:
+  - alert: MarzbanUser30GBValue
+    expr: |
+      ({__name__=~"marzban_user_kit_plansh", job="users"} > 52428800) > 21474836480
     for: 1m
     labels:
       severity: info
