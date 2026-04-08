@@ -2,8 +2,8 @@ version: '3.8'
 
 networks:
   vpn_network:
-    nexternal: true
-    
+    external: true
+
 services:
   prometheus:
     image: prom/prometheus
