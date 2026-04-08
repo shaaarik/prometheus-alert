@@ -66,8 +66,8 @@ jobs:
       - name: Reload systemd 
         run: |
           sudo systemctl daemon-reload
-          sudo systemctl enable my-python-script.timer
-          sudo systemctl start my-python-script.timer
+          sudo systemctl enable metrics.timer
+          sudo systemctl start metrics.timer
 
       # - name: Prune unused images
       #   run: docker image prune -f
