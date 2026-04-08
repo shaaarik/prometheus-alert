@@ -1,6 +1,6 @@
 import os
 import requests
-import time
+from datetime import datetime
 from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
 
 # Конфигурация
@@ -68,8 +68,9 @@ def get_marzban_metrics():
         metrics["marzban_total_nodes"] = len(nodes)
     except:
         metrics["marzban_total_nodes"] = 0
-    
-    with open('log.txt', 'w') as file:
+    now = datetime.now()
+
+    with open(f'log_{now.strftime("%Y_%m_%d_%H_%M_%S")}.txt', 'w') as file:
         file.write(str(metrics))
         file.write(str(variables))
     #return metrics, variables

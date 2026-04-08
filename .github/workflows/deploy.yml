@@ -64,12 +64,16 @@ jobs:
         run: | 
           sudo mv metrics.service /etc/systemd/system/ 
           sudo mv metrics.timer /etc/systemd/system/
+          sudo mv reset.service /etc/systemd/system/
+          sudo mv reset.timer /etc/systemd/system/
 
       - name: Reload systemd 
         run: |
           sudo systemctl daemon-reload
           sudo systemctl enable metrics.timer
           sudo systemctl start metrics.timer
+          sudo systemctl enable reset.timer
+          sudo systemctl start reset.timer
 
       # - name: Prune unused images
       #   run: docker image prune -f
