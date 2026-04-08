@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
     paths:
       - 'prometheus/**'
-      - '.github/workflows/alertmanager-deploy.yml'
+      - '.github/workflows/prometheus-deploy.yml'
   workflow_dispatch:
 
 jobs:
