@@ -30,7 +30,7 @@ jobs:
       - name: Create virtual environment
         run: |
           python -m venv venv
-          echo "✅ Virtual environment created"
+          echo "Virtual environment created"
 
       - name: Activate venv and install dependencies
         run: |
@@ -61,7 +61,9 @@ jobs:
           CLIENT_KEY_PATH: ${{ vars.CLIENT_KEY_PATH }}
       
       - name: Move metrics.service and metrics.timer
-        run: sudo mv metrics.service /etc/systemd/system/ || sudo mv metrics.timer /etc/systemd/system/
+        run: | 
+          sudo mv metrics.service /etc/systemd/system/ 
+          sudo mv metrics.timer /etc/systemd/system/
 
       - name: Reload systemd 
         run: |
