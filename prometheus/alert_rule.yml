@@ -1,5 +1,5 @@
 groups:
-- name: marzban_alerts
+- name: marzban_info10
   rules:
   - alert: MarzbanUser10GBValue
     expr: |
@@ -14,7 +14,7 @@ groups:
         Текущее значение: {{ $value | humanize }}
         Порог: 10 GB
 
-- name: marzban_alerts
+- name: marzban_info20
   rules:
   - alert: MarzbanUser20GBValue
     expr: |
@@ -29,7 +29,7 @@ groups:
         Текущее значение: {{ $value | humanize }}
         Порог: 20 GB
 
-- name: marzban_alerts
+- name: marzban_info30
   rules:
   - alert: MarzbanUser30GBValue
     expr: |
@@ -44,7 +44,7 @@ groups:
         Текущее значение: {{ $value | humanize }}
         Порог: 30 GB
 
-- name: marzban_alerts
+- name: marzban_alerts1tb
   rules:
   - alert: Marzban1TB
     expr: |
@@ -58,7 +58,7 @@ groups:
         Текущее значение: {{ $value | humanize }}
         Порог: 1 TB
 
-- name: marzban_alerts
+- name: marzban_alerts2tb
   rules:
   - alert: Marzban2TB
     expr: |
@@ -72,7 +72,7 @@ groups:
         Текущее значение: {{ $value | humanize }}
         Порог: 2 TB
 
-- name: marzban_alerts
+- name: marzban_alerts2_5tb
   rules:
   - alert: Marzban2_5TB
     expr: |
