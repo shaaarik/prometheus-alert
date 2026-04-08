@@ -22,7 +22,7 @@ services:
       - '--config.file=/etc/alertmanager/alertmanager.yml'
       - '--storage.path=/alertmanager'
       - '--web.listen-address=:9093'
-      - '--web.external-url=http://localhost:9093'
+      - '--web.external-url=http://10.8.0.1:9093'
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://10.8.0.1:9093/-/healthy"]
       interval: 30s

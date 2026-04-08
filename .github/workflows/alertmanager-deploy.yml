@@ -39,7 +39,7 @@ jobs:
           sleep 5
           docker-compose ps
           
-          curl -f http://localhost:9093/-/healthy || exit 1
+          curl -f http://10.8.0.1:9093/-/healthy || exit 1
           
           curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
             -H "Content-Type: application/json" \
