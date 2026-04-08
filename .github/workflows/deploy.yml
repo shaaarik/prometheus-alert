@@ -27,11 +27,21 @@ jobs:
         working-directory: ./prometheus-alert
         run: docker-compose up -d --build
       
-      - name: Install requirements
-        run: python3 -m venv venv || source venv/bin/activate || pip install -r requirements
+      - name: Create virtual environment
+        run: |
+          python -m venv venv
+          echo "✅ Virtual environment created"
+
+      - name: Activate venv and install dependencies
+        run: |
+          source venv/bin/activate
+          python3 -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Run deployment script
-        run: python metrics.py > metrics.txt
+        run: |
+          source venv/bin/activate
+          python metrics.py > metrics.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARZBAN_URL: ${{ vars.MARZBAN_URL }}
