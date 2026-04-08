@@ -1,0 +1,55 @@
+name: Deploy Alertmanager
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'alertmanager/**'
+      - '.github/workflows/alertmanager-deploy.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy_alertmanager:
+    runs-on: self-hosted
+    environment:
+      name: Env 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Create alertmanager.yml from template
+        run: |
+          sed -e 's|${TELEGRAM_BOT_TOKEN}|${{ secrets.TELEGRAM_BOT_TOKEN }}|g' \
+              -e 's|${TELEGRAM_CHAT_ID}|${{ secrets.TELEGRAM_CHAT_ID }}|g' \
+              alertmanager.yml.template > alertmanager.yml
+      
+      - name: Stop and remove old containers
+        working-directory: ./alertmanager
+        run: docker-compose down || true
+
+      - name: Make .env file
+        working-directory: ./alertmanager
+        run: |
+          cd /opt/alertmanager
+          
+          echo "TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}" > .env
+          echo "TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}" >> .env
+          
+          docker-compose up -d
+          
+          sleep 5
+          docker-compose ps
+          
+          curl -f http://localhost:9093/-/healthy || exit 1
+          
+          curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"chat_id\": \"${{ secrets.TELEGRAM_CHAT_ID }}\",
+              \"text\": \"✅ AlertManager успешно развернут на $(date +'%Y-%m-%d %H:%M:%S')\",
+              \"parse_mode\": \"Markdown\"
+            }" || echo "Telegram notification failed"
+      
+      - name: Cleanup
+        run: |
+          rm -f alertmanager.yml  
