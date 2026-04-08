@@ -30,7 +30,7 @@ jobs:
         run: python3 -m venv venv || source venv/bin/activate || pip install -r requirements
 
       - name: Run deployment script
-        run: python test.py
+        run: python test.py > text.txt || cat text.txt
         env:
           CLIENT_CERT_PATH: ${{ vars.CLIENT_CERT_PATH }}
       
