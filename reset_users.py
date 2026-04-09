@@ -65,7 +65,7 @@ def get_marzban_metrics():
     print(metrics)
     sorted_metrics = dict(sorted(metrics.items(), key=lambda item: item[1], reverse=True))
     
-    summary = "📊 *Топ пользователей по трафику:*\n\n"
+    summary = "📊 *Топ пользователей по трафику за месяц!:*\n\n"
     
     for i, (username, traffic) in enumerate(sorted_metrics.items(), 1):
         if i > 15: 
