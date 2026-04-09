@@ -65,6 +65,8 @@ jobs:
           PUSHGATEWAY_URL2: ${{ vars.PUSHGATEWAY_URL2 }}
           CLIENT_CERT_PATH: ${{ vars.CLIENT_CERT_PATH }}
           CLIENT_KEY_PATH: ${{ vars.CLIENT_KEY_PATH }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       
       - name: Move metrics.service and metrics.timer
         run: | 
