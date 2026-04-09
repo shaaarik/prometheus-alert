@@ -10,7 +10,7 @@ MARZBAN_PASSWORD = os.getenv('MARZBAN_PASSWORD')
 CLIENT_CERT_PATH = os.getenv('CLIENT_CERT_PATH')
 CLIENT_KEY_PATH = os.getenv('CLIENT_KEY_PATH')
 BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
-BOT_ID = os.getenv('TELEGRAM_BOT_ID')
+BOT_ID = os.getenv('TELEGRAM_CHAT_ID')
 
 
 def send_telegram_message(message, chat_id, token):
